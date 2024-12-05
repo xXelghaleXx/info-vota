@@ -1,0 +1,604 @@
+html, body {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    height: 100%; /* Asegura que tanto el html como el body ocupen el 100% de la altura de la ventana */
+    width: 100%; /* Asegura que tanto el html como el body ocupen el 100% del ancho de la ventana */
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+body {
+    display: flex; /* Usa flexbox para la distribución */
+    flex-direction: column; /* Apila los elementos en columna */
+    font-family: Arial, sans-serif; /* Fuente general */
+    background-image: url('./imagenes/fondo.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Asegura que el fondo quede fijo al hacer scroll */
+}
+main {
+    flex: 1; /* Permite que el main ocupe todo el espacio restante */
+    padding: 10px;
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente */
+}
+
+.footer {
+    flex: 0 0 auto; /* Esto asegura que el footer ocupe el espacio necesario */
+    background-color: #031c35;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    color: #080808;
+    animation: fadeIn 2s;
+    margin: 20px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    background-color: #031c35; /* Fondo gris azulado claro */
+    padding: 5px 40px; /* Espaciado superior/inferior de 5px y lateral de 40px */
+    position: relative;
+    margin: 0 auto; /* Centra el navbar horizontalmente */
+    width: 100%; /* Ajusta el ancho al contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: flex; /* Flexbox para centrar contenido */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    height: auto; /* Centra los elementos verticalmente */
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente los links */
+    margin: 0;
+    padding: 10;
+}
+
+.nav-item {
+    margin: 0 20px; /* Espacio entre cada enlace */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #db0f0f; /* Color del texto al hacer hover */
+}
+
+.footer-content {
+    margin: 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #ea220c;
+}
+
+main {
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* Espaciado entre secciones */
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.info-section {
+    flex: 1;
+    margin: 0 10px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background-color: none;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+h2 {
+    color: #080808;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #080808;
+}
+
+/* Estilos para la cuadrícula */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* Espacio entre las imágenes */
+    justify-items: center; /* Alinea las imágenes horizontalmente al centro */
+    align-items: center; /* Alinea las imágenes verticalmente al centro */
+}
+
+.grid-item {
+    background-color: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 300px; /* Establece la anchura deseada */
+    height: 300px; /* Establece la altura deseada */
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+#galeria {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .grid-item img {
+        width: 80%; /* Ajusta el ancho a 80% del contenedor en pantallas pequeñas */
+        height: auto; /* Mantiene la relación de aspecto */
+    }
+}
+
+/* Botón hamburguesa */
+.mobile-menu {
+    display: none;
+}
+
+.menu-btn {
+    font-size: 30px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu .nav-link {
+        color: #ffffff;
+        font-size: 20px;
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .mobile-menu .nav-link:hover {
+        color: #080808;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.grid-item {
+    position: relative;
+    background-color: white;
+    border-radius: 9%;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.texto-extra{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifs;
+    color: #000000;
+}
+
+.info-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifs;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item:hover .info-text {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navbar-logo img {
+    width: 50px;
+    height: auto;
+    max-height: 60px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    max-width: 900px; /* Limitar ancho */
+    max-height: 400px; /* Limitar altura */
+    margin: 20px auto; /* Centrar el carrusel */
+    overflow: hidden; /* Esconde el contenido fuera del contenedor */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 400px; /* Ajustar a la altura máxima del carrusel */
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Esconde contenido adicional de las imágenes */
+}
+
+.carousel-item img {
+    width: 100%; /* La imagen ocupa todo el ancho del carrusel */
+    height: 100%; /* La imagen ocupa toda la altura del carrusel */
+    object-fit: cover; /* Recorta la imagen si es necesario para llenar el espacio */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: #d3d3d3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.indicator.active {
+    background: #f0a500;
+}
+
+.footer-text{
+    color: white;
+}
+
+.read-more {
+    background-color: white; /* Fondo blanco por defecto */
+    color: #db0f0f; /* Texto rojo por defecto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px; /* Espaciado interno para que parezca un botón */
+    margin-top: 5px; /* Separación superior */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar el texto */
+    cursor: pointer; /* Mostrar el cursor de mano */
+    border: none; /* Elimina el borde azul en algunos navegadores */
+    border-radius: 5px; /* Esquinas redondeadas */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    outline: none; /* Elimina el contorno azul al hacer clic */
+}
+
+.read-more:hover {
+    background-color: #db0f0f; /* Fondo rojo al hacer hover */
+    color: white; /* Texto blanco al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al hacer hover */
+    text-decoration: none; /* Asegura que no haya subrayado */
+}
+
+@media (max-width: 1024px) {
+    /* Ajustar Navbar */
+    .navbar {
+        padding: 5px 20px;
+    }
+
+    .nav-item {
+        margin: 0 10px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    /* Ajustar Carrusel */
+    .carousel {
+        max-width: 100%; /* Ocupa el ancho total */
+        max-height: 300px; /* Reduce la altura */
+    }
+
+    .carousel-item {
+        height: 300px;
+    }
+
+    /* Ajustar Secciones */
+    .info-container {
+        flex-direction: column; /* Cambiar a diseño en columna */
+        align-items: center;
+    }
+
+    .info-section {
+        width: 100%;
+        margin-bottom: 20px; /* Espaciado entre secciones */
+        text-align: center; /* Centrar texto */
+    }
+
+    /* Ajustar Cuadrícula */
+    .grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 10px; /* Reducir el espacio entre elementos */
+    }
+
+    .grid-item img {
+        width: 90%; /* Reducir el ancho de las imágenes */
+        height: auto; /* Mantener proporción */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustar Navbar para móviles */
+    .navbar {
+        justify-content: space-between; /* Espacio entre logo y menú */
+    }
+
+    .navbar-logo img {
+        width: 40px; /* Reducir tamaño del logo */
+    }
+
+    .menu-btn {
+        display: block; /* Mostrar botón del menú móvil */
+    }
+
+    .navbar-nav {
+        display: none; /* Ocultar el menú principal */
+    }
+
+    /* Ajustar Menú Móvil */
+    .mobile-menu {
+        width: 100%; /* Ocupa todo el ancho */
+        height: 100vh; /* Ocupa toda la altura */
+        padding: 20px;
+    }
+
+    .mobile-menu .nav-link {
+        font-size: 18px; /* Ajustar tamaño del texto */
+        text-align: center;
+    }
+
+    /* Ajustar Carrusel */
+    .carousel {
+        max-height: 200px; /* Reducir altura */
+    }
+
+    .carousel-item {
+        height: 200px;
+    }
+
+    /* Ajustar Secciones */
+    .info-container {
+        padding: 0 10px;
+    }
+
+    .info-section {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Ajustar Cuadrícula */
+    .grid-item img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustar Navbar */
+    .navbar {
+        flex-direction: column; /* Cambiar a diseño en columna */
+        align-items: center;
+    }
+
+    .menu-btn {
+        margin-bottom: 10px; /* Espaciado del botón */
+    }
+
+    /* Ajustar Carrusel */
+    .carousel {
+        max-height: 150px; /* Reducir altura */
+    }
+
+    .carousel-item {
+        height: 150px;
+    }
+
+    /* Ajustar Botones */
+    .read-more {
+        font-size: 14px; /* Reducir tamaño del texto */
+        padding: 8px 16px; /* Reducir padding */
+    }
+
+    /* Ajustar Footer */
+    .footer {
+        font-size: 12px; /* Reducir tamaño de fuente */
+    }
+
+    .footer-links a {
+        font-size: 12px;
+        margin: 0 5px;
+    }
+}
+
+.articulo-1 {
+    background-color: #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 20px; /* Aumenta el espacio interno */
+    margin: 20px; /* Aumenta el espacio externo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* (Opcional) Añade una sombra para resaltar */
+}
+
+.articulo-2 {
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 30px;
+    padding: 20px; /* Aumenta el espacio interno */
+    margin: 20px; /* Aumenta el espacio externo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* (Opcional) Añade una sombra para resaltar */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre botones */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+}
+
+.btn-navegacion {
+    background-color: #2980b9; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar texto */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease; /* Transición suave */
+    display: inline-block; /* Comportamiento de botón */
+}
+
+.btn-navegacion:hover {
+    background-color: #1a5781; /* Fondo más oscuro al pasar el ratón */
+}
+
+.btnlink {
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Hereda el color del botón */
+    display: block; /* Asegura que ocupe todo el botón */
+}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>InfoVota</title>
+    <link rel="icon" href="./imagenes/Logo.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+        <ul class="navbar-nav">
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Logo InfoVota">
+            </div>
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li class="nav-item"><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li class="nav-item"><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li class="nav-item"><a href="Historia.html" class="nav-link">Educación Política</a></li>
+        </ul>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Logo InfoVota">
+            </div>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li><a href="Historia.html" class="nav-link">Educación Política</a></li>
+        </ul>
+    </div>
+
+
+    <section id="futuros-candidatos" class="articulo">
+        <h2>Lista de futuros candidatos</h2>
+        <p>Información sobre los posibles candidatos para las próximas elecciones...</p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2024 InfoVota. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#contacto">Contacto</a>
+                <a href="#politicas">Políticas de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+     <script src="carrusel.js"></script>
+     <script src="menu-movil.js"></script>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

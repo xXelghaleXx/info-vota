@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>InfoVota</title>
+    <link rel="icon" href="./imagenes/Logo.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+        <ul class="navbar-nav">
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Logo InfoVota">
+            </div>
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li class="nav-item"><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li class="nav-item"><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li class="nav-item"><a href="Historia.html" class="nav-link">Educación Política</a></li>
+        </ul>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Logo InfoVota">
+            </div>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li><a href="Historia.html" class="nav-link">Educación Política</a></li>
+        </ul>
+    </div>
+
+    
+    <title>Lista de Presidentes</title>
+    <style>
+        /* Contenedor principal */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Sección del artículo */
+        .articulo-2 {
+            max-width: 900px; /* Limitar ancho */
+            background-color: ; /* Fondo blanco */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            padding: 30px; /* Espaciado interno */
+            margin: 20px; /* Separación externa */
+            text-align: justify; /* Justificar el texto */
+        }
+
+        /* Título de la lista */
+        .titulo-lista {
+            text-align: center; /* Centrar título */
+            font-size: 2rem; /* Tamaño de fuente del título */
+            color: #333; /* Color oscuro */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #db0f0f; /* Línea decorativa */
+            padding-bottom: 10px;
+        }
+
+        /* Lista de presidentes */
+        .presidentes-lista {
+            font-size: 1rem; /* Tamaño legible */
+            line-height: 1.8; /* Espaciado entre líneas */
+            color: #555; /* Color gris oscuro */
+        }
+
+        /* Párrafos de presidentes */
+        .parrafo-presidente {
+            margin-bottom: 15px; /* Espaciado entre párrafos */
+            padding: 10px;
+            background: #fdfdfd; /* Fondo claro */
+            border-left: 4px solid #db0f0f; /* Barra decorativa a la izquierda */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        /* Hover en párrafos */
+        .parrafo-presidente:hover {
+            background: #fff2f2; /* Fondo más claro al pasar el ratón */
+            transition: background 0.3s ease; /* Transición suave */
+        }
+
+        /* Nombres de presidentes */
+        .nombre-presidente {
+            color: #db0f0f; /* Destacar en rojo */
+            font-weight: bold; /* Negrita */
+        }
+
+        /* Estilo responsive */
+        @media (max-width: 768px) {
+            .articulo-2 {
+                padding: 20px; /* Reducir padding */
+            }
+
+            .titulo-lista {
+                font-size: 1.5rem; /* Ajustar tamaño del título */
+            }
+
+            .presidentes-lista {
+                font-size: 0.9rem; /* Reducir tamaño de fuente */
+            }
+
+            .button-container {
+                text-align: left; /* Alinea el botón a la izquierda */
+                margin-top: 20px; /* Espacio superior */
+            }
+            
+            .btn-navegacion {
+                background-color: #2980b9; /* Fondo azul */
+                color: #fff; /* Texto blanco */
+                padding: 10px 20px; /* Espaciado interno */
+                border: none; /* Sin borde */
+                border-radius: 5px; /* Bordes redondeados */
+                font-size: 16px; /* Tamaño de texto */
+                cursor: pointer; /* Cursor de mano */
+                transition: background-color 0.3s ease; /* Efecto de transición */
+            }
+            
+            .btn-navegacion:hover {
+                background-color: #1a5781; /* Fondo más oscuro al pasar el ratón */
+            }
+        }
+    </style>
+        </head>
+        <body>
+            <div class="button-container">
+                <button class="btn-navegacion" onclick="location.href='Historia.html'">Regresar a Educación Política</button>
+            </div> 
+    <div class="content">
+        <section id="lista-presidentes" class="articulo-2">
+            <h2 class="titulo-lista">Lista de Presidentes</h2>
+            <div class="presidentes-lista">
+                <p class="parrafo-presidente">
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Jose_de_la_Riva_Aguero_Sanchez_Boquete.JPG' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">1. José de la Riva-Agüero (1823)</strong>: Primer presidente del Perú. Asumió el cargo durante la guerra de independencia del país, pero fue destituido por el Congreso debido a conflictos internos.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Jos%C3%A9_Bernardo_de_Tagle_by_Jos%C3%A9_Gil_de_Castro.jpg/640px-Jos%C3%A9_Bernardo_de_Tagle_by_Jos%C3%A9_Gil_de_Castro.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">2. José Bernardo de Tagle (1823-1824)</strong>: Segundo presidente, también involucrado en la guerra de independencia. Su gobierno cayó tras la derrota frente a las tropas españolas en la Batalla de Ayacucho.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://historia.nationalgeographic.com.es/medio/2017/12/13/bolivar_0a73f05f.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">3. Simón Bolívar (1824-1827)</strong>: Líder militar y libertador. Aunque no fue oficialmente presidente del Perú, asumió poderes dictatoriales tras la independencia y reorganizó el país antes de regresar a Colombia.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/11A26/production/_119803227_mediaitem119803226.jpg.webp' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">4. Andrés de Santa Cruz (1827)</strong>: Militar boliviano-peruano. Fue presidente interino en un momento de crisis política, aunque su mandato fue breve.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/a/a1/Jose_de_La_Mar_3.JPG' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">5. José de La Mar (1827-1829)</strong>: Militar que asumió la presidencia en un contexto de inestabilidad, centrado en la consolidación del Estado peruano. Fue derrocado por el ejército.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTwlNNaaYbQzMd1vFszAMxtBC09aYv7KkKhg&s' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">6. Agustín Gamarra (1829-1833, 1839-1841)</strong>: Militar que gobernó en dos periodos. Intentó unir Perú y Bolivia, pero su gobierno terminó abruptamente en una batalla contra las tropas bolivianas.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Salaverry2.jpg/640px-Salaverry2.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">7. Felipe Santiago Salaverry (1835-1836)</strong>: Asumió el poder como presidente en un contexto de lucha interna, pero fue derrotado y ejecutado por el ejército boliviano.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://www.biografiasyvidas.com/biografia/c/fotos/castilla.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">8. Ramón Castilla (1845-1851, 1855-1862)</strong>: Uno de los presidentes más importantes del Perú. Abolió la esclavitud y promovió grandes reformas económicas y sociales, financiadas por las riquezas del guano.
+                </p>
+                <p class="parrafo-presidente">
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/J._Balta.jpg/640px-J._Balta.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">9. José Balta (1868-1872)</strong>: Presidente que impulsó proyectos de infraestructura
+                    como el desarrollo del ferrocarril. Fue asesinado durante un golpe militar al final de su
+                    mandato.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://elcomercio.pe/resizer/UY5BJ8rq-vZg-kwVbHjkK2FGIT8=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/W22XMMBSBREOBGKADYJAYBSVIA.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">10. Nicolás de Piérola (1879-1881, 1895-1899)</strong>: Líder militar y político,
+                    conocido por liderar la defensa de Lima durante la Guerra del Pacífico. Su segundo mandato se
+                    centró en la reorganización económica del país.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://www.elregionalpiura.com.pe/images/Fotografias/2022/Agosto_2022/Manuel-Pardo-y-Lavalle-01.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">11. Manuel Pardo (1872-1876)</strong>: Primer civil en ser presidente. Fundador del
+                    Partido Civilista, intentó promover reformas institucionales pero su gobierno estuvo marcado por
+                    tensiones políticas.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://www.infobae.com/resizer/v2/NQDCHQ2AURDJPBGJE3HO53HUSI.jpg?auth=006cd436206532ae59b8cb9141399d98c4e6d188b6a2d22d43c7d8b441dcd1ba&smart=true&width=350&height=525&quality=85' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">12. Augusto B. Leguía (1908-1912, 1919-1930)</strong>: Gobernó en dos periodos, el
+                    segundo conocido como "El Oncenio", caracterizado por el autoritarismo y el impulso de grandes
+                    proyectos de modernización e infraestructura.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://www.ecured.cu/images/2/2a/Luis_S%C3%A1nchez_Cerro_.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">13. Luis Miguel Sánchez Cerro (1931-1933)</strong>: Militar que asumió la presidencia
+                    tras un golpe de estado. Fue asesinado durante su mandato, en un contexto de gran agitación
+                    social.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://ojo.pe/resizer/zopaZcUZ2awnFD6We2AalwyTAZ0=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/MEKUSTSX2VGZBF4KVFW4QBFOHM.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">14. Manuel A. Odría (1948-1956)</strong>: Militar que gobernó de manera autoritaria. Su
+                    gobierno se centró en la lucha contra el comunismo y en impulsar el crecimiento económico a
+                    través de la inversión extranjera.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Jose_de_la_Riva_Aguero_Sanchez_Boquete.JPG' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">15. Fernando Belaúnde Terry (1963-1968, 1980-1985)</strong>: Líder del partido Acción
+                    Popular. Su primer mandato fue interrumpido por un golpe militar, pero regresó al poder en 1980
+                    para liderar el retorno a la democracia.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsAYqSBMl2BwGcJo_J44dWPjnSjM8364pXg&s' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">16. Juan Velasco Alvarado (1968-1975)</strong>: Militar que lideró una junta militar de
+                    gobierno tras derrocar a Belaúnde. Promovió una serie de reformas radicales, como la reforma
+                    agraria y la nacionalización de industrias estratégicas.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://www.biografiasyvidas.com/biografia/m/fotos/morales_bermudez.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">17. Francisco Morales Bermúdez (1975-1980)</strong>: Militar que asumió la presidencia
+                    tras un golpe interno contra Velasco. Su gobierno fue más moderado y lideró la transición hacia
+                    la democracia.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://time.graphics/uploadedFiles/500/cf/aa/cfaac942f38b7c56b527ff93e59a3be8.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">18. Alan García (1985-1990, 2006-2011)</strong>: Líder del partido APRA, su primer
+                    mandato estuvo marcado por una grave crisis económica e hiperinflación, mientras que su segundo
+                    mandato impulsó un crecimiento económico significativo. Se suicidó en 2019.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://hondumedios.hn/wp-content/uploads/2024/09/Imagen-de-WhatsApp-2024-09-11-a-las-22.48.56_d7b18601.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">19. Alberto Fujimori (1990-2000)</strong>: Gobernó durante una década marcada por el
+                    autoritarismo, la lucha contra el terrorismo, y la corrupción. Fue destituido y encarcelado por
+                    violaciones a los derechos humanos.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://cdn01.pucp.education/idehpucp/images/2024/03/analisis-de-la-detencion-de-alejandro-toledo-en-los-estados-unidos-19628.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">20. Alejandro Toledo (2001-2006)</strong>: Su gobierno se centró en la recuperación
+                    económica tras la crisis de la era Fujimori, además de firmar tratados de libre comercio y
+                    fomentar las relaciones internacionales.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://www.ipe.org.pe/portal/wp-content/uploads/2018/01/000291575W.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">21. Ollanta Humala (2011-2016)</strong>: Militar retirado que llegó al poder con un
+                    discurso de izquierda, pero gobernó de manera centrista, manteniendo un crecimiento económico
+                    estable.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://perureports.com/wp-content/uploads/2016/10/pedro-pablo-kuczynski.jpg' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">22. Pedro Pablo Kuczynski (2016-2018)</strong>: Economista y tecnócrata, su gobierno fue
+                    interrumpido por un escándalo de corrupción, lo que llevó a su renuncia.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffOiuTpaAKcrw2tTlxNPh1i0JyvaUquAGnw&s' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">23. Martín Vizcarra (2018-2020)</strong>: Llegó al poder tras la renuncia de Kuczynski.
+                    Su mandato estuvo centrado en la lucha contra la corrupción, pero fue destituido por el
+                    Congreso.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_w_mvpZtBzPBT105RjtDK9M8ZJJilwx4guw&s' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">24. Manuel Merino (2020)</strong>: Presidente interino tras la destitución de Vizcarra,
+                    su gobierno duró menos de una semana debido a protestas masivas.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLZX9ln3a2jVC8VOSOT_HV3QXgSwVLGWWZA&' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">25. Francisco Sagasti (2020-2021)</strong>: Presidente de transición, su breve mandato
+                    estuvo marcado por la gestión de la pandemia de COVID-19 y la organización de nuevas elecciones.
+                </p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://ojo-publico.com/3951/pedro-castillo-imito-fujimori-y-ahora-enfrenta-proceso-por-rebelion' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">26. Pedro Castillo (2021-2022)</strong>: Profesor y líder sindical, fue destituido tras
+                    intentos fallidos de disolver el Congreso y una serie de controversias durante su mandato.</p>
+
+                <p class="parrafo-presidente">
+                    <img src='https://cloudfront-us-east-1.images.arcpublishing.com/infobae/WHNN3NGXDJBVPFW6ZAMKV4CMW4.jp' width='200px' height='100px'>
+                    <br>
+                    <strong class="nombre-presidente">27. Dina Boluarte (2022-Presente)</strong>: Primera mujer en asumir la presidencia del
+                    Perú. Llegó al cargo tras la destitución de Pedro Castillo, enfrentando desafíos políticos y
+                    sociales complejos.</p>
+                <!-- Continúa con el resto de los presidentes -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2024 InfoVota. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#contacto">Contacto</a>
+                <a href="#politicas">Políticas de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+     <script src="carrusel.js"></script>
+     <script src="menu-movil.js"></script>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

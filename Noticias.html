@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./imagenes/Logo.webp" type="image/x-icon">
+    <style>
+     
+    
+       
+        @keyframes fadeInTitle {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        .news-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+    
+        .news-card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s; /* Añade transición para el efecto */
+        }
+    
+        .news-card:hover {
+            transform: translateY(-10px); /* Se eleva 10px al hacer hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al hacer hover */
+        }
+    
+        .news-card img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+    
+        .news-card h3 {
+            margin-top: 0;
+            color: #000;
+        }
+    
+        .news-card p {
+            color: #666;
+        }
+    
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    
+        .news-title {
+            text-align: center;
+            color: #ff6347;
+            animation: pulse 3s infinite;
+        }
+    
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    
+    <title>Noticias - InfoVota</title>
+</head>
+<body>
+    <header>
+       
+        <div class="navbar">
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- Botón hamburguesa -->
+            <ul class="navbar-nav">
+                <div class="navbar-logo">
+                    <img src="./imagenes/Logo.webp" alt="Descripción de Imagen 1">
+                </div>
+                
+                <li class="nav-item"><a href="index.html    " class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="Noticias.html" class="nav-link">Noticias</a></li>
+                <li class="nav-item"><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+                <li class="nav-item"><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+                <li class="nav-item"><a href="Historia.html" class="nav-link">Educacion Politica</a></li>
+            </ul>
+          </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <div class="navbar-logo">
+                    <img src="./imagenes/Logo.webp" alt="Descripción de Imagen 1"> <!-- Título o logo -->
+                </div>
+                <li ><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li ><a href="Noticias.html" class="nav-link">Noticias</a></li>
+                <li ><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+                <li ><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+                <li ><a href="Historia.html" class="nav-link">Educacion Politica</a></li>
+              
+            </ul>
+        </div>
+    </header>
+    
+  
+        <section id="noticias" class="news-section">
+            <div class="news-card">
+                <img src="https://comunicaciones.congreso.gob.pe/wpuploads/2024/05/pleno-panoramico-100524-ii.jpeg" alt="Imagen relacionada con la noticia">
+                <div>
+                    <h3>Proyecto de Ley de Reforma Electoral 2024</h3>
+                    <p>El Congreso del Perú ha propuesto un nuevo proyecto de ley para reformar el sistema electoral. Esta iniciativa tiene como objetivo mejorar la transparencia y facilitar la participación de los ciudadanos en los procesos electorales.</p>
+                    <a href="https://comunicaciones.congreso.gob.pe/noticias/pleno-aprobo-dictamen-para-optimizar-el-proceso-electoral/" target="_blank" class="read-more">Leer más</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.pagina12.com.ar/styles/focal_16_9_960x540/public/2022-05/545677-whatsapp-20image-202022-05-29-20at-207-58-57-20pm.jpeg?itok=br0bNluM" alt="Imagen relacionada con la noticia">
+                <div>
+                    <h3>Nuevas Alianzas Políticas para las Elecciones 2025</h3>
+                    <p>Varios partidos políticos han anunciado la formación de nuevas alianzas para las próximas elecciones generales de 2025. Estas alianzas buscan fortalecer las propuestas y aumentar las posibilidades de éxito en el próximo ciclo electoral.</p>
+                    <a href="https://www.onpe.gob.pe/servicios/financiamiento-organizaciones-politicas/partidos-alianzas/" target="_blank" class="read-more">Leer más</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://www.revistaideele.com/wp-content/uploads/2021/06/000224716W.jpg" alt="Imagen relacionada con la noticia">
+                <div>
+                    <h3>Impacto de las Reformas Educativas en el Sistema Nacional</h3>
+                    <p>El Ministerio de Educación ha implementado nuevas reformas destinadas a mejorar la calidad de la educación pública. Se espera que estas medidas tengan un impacto positivo en la formación de los jóvenes peruanos.</p>
+                    <a href="https://rieoei.org/historico/deloslectores/233Morillo.PDF" target="_blank" class="read-more">Leer más</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://i.ytimg.com/vi/rc-U1PdfeTk/sddefault.jpg" alt="Imagen relacionada con la noticia">
+                <div>
+                    <h3>Comparación de Propuestas Económicas entre los Candidatos</h3>
+                    <p>Con las próximas elecciones en mente, los principales candidatos han comenzado a presentar sus propuestas económicas. Esta noticia presenta un análisis comparativo de sus planes y cómo podrían afectar la economía nacional.</p>
+                    <a href="https://especiales.elcomercio.pe/?q=especiales/compara-propuestas-elecciones-2021-nndd-ecvisual-ecpm/index.html" target="_blank" class="read-more">Leer más</a>
+                </div>
+            </div>
+        </section>
+   
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 InfoVota. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#contacto">Contacto</a>
+                <a href="#politicas">Políticas de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("mobile-menu");
+          if (menu.style.display === "block") {
+            menu.style.display = "none";
+          } else {
+            menu.style.display = "block";
+          }
+        }
+    </script>
+
+    <script src="menu-movil.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./imagenes/Logo.webp" type="image/x-icon">
+    <title>InfoVota</title>
+</head>
+<body>
+
+    <style>
+        /* Estilos generales */
+        .container {
+            display: flex;
+            justify-content: center; /* Centrar horizontalmente el contenido */
+            align-items: center; /* Centrar verticalmente el contenido */
+        }
+    
+        /* Estilos de la barra lateral */
+        
+    
+        .menu-politica {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        .menu-politica li {
+            margin-bottom: 15px;
+        }
+    
+        .menu-politica a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    
+        .menu-politica a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Estilos del contenido */
+        .content {
+            margin-left: 70px; /* Espacio para la barra lateral */
+            padding: 20px;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar horizontalmente el contenido */
+        }
+    
+        .articulo {
+            margin-bottom: 50px;
+            text-align: center; /* Centrar el texto dentro de cada artículo */
+        }
+    
+        h2 {
+            color: #2980b9;
+        }
+    
+        /* Añadir estilo resaltado cuando una sección está activa */
+        .menu-politica a.active {
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    
+        @import url(https://fonts.googleapis.com/css?family=Poppins:400,300,500);
+    
+        html {
+            box-sizing: border-box;
+        }
+    
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+    
+        section.card {
+            background: #000046;
+            background: -webkit-linear-gradient(to right, #e01c1c, #460000);
+            background: linear-gradient(to right, #e01c1c, #460000);
+            border-radius: 24px 24px 24px 48px;
+            padding: 48px 48px 48px 308px;
+            margin: 84px 0;
+            min-width: 640px;
+            display: flex;
+            flex-direction: row;
+            align-self: center; /* Centrar el card */
+            justify-content: center; /* Centrar el card */
+            position: relative;
+            box-shadow: 5px 0 0 0 rgba(204, 204, 204, 0.3), -5px 0 0 0 rgba(204, 204, 204, 0.3), 0 5px 0 0 rgba(204, 204, 204, 0.3);
+        }
+    
+        section.card .text-content {
+            display: flex;
+            flex-direction: column;
+            width: calc(60vw - 192px);
+            align-items: center; /* Centrar el texto dentro del card */
+            text-align: center; /* Centrar el texto */
+        }
+    
+        section.card .text-content h3 {
+            margin: 0;
+            font-size: 1.5em;
+            max-width: 20ch;
+            color: #fff;
+        }
+    
+        section.card .text-content p {
+            margin: 25px 0 24px;
+            color: #fff;
+        }
+    
+        section.card .text-content a {
+            border: 3px solid #f2f2f2;
+            color: #ffffff;
+            align-self: flex-start;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            transition: 400ms all;
+        }
+    
+        section.card .text-content a:hover {
+            background: #051c5e;
+            color: white;
+        }
+    
+        section.card .visual {
+            width: 240px;
+            height: 100%;
+            position: absolute;
+            top: -24px;
+            left: 24px;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+    
+        section.card .visual img {
+            height: 110%;
+        }
+    
+        article {
+            margin: auto;
+            display: block;
+            width: calc(60vw + 248px);
+            max-width: calc(920px + 248px);
+            min-width: calc(640px + 248px);
+        }
+    
+        @media all and (max-width: 1100px) {
+            body {
+                padding: 96px 48px 24px;
+            }
+    
+            article {
+                width: 100%;
+                min-width: 100%;
+            }
+    
+            section.card {
+                min-width: 100%;
+            }
+    
+            section.card .text-content {
+                width: 100%;
+            }
+        }
+    
+        @media all and (max-width: 720px) {
+            body {
+                padding: 48px 24px 0;
+            }
+    
+            section.card {
+                margin: 64px 0;
+                padding: 88px 36px 36px;
+                flex-direction: column;
+                border-radius: 24px;
+            }
+    
+            section.card .text-content h3 {
+                max-width: calc(100% - 150px);
+                font-size: 1em;
+            }
+    
+            section.card .text-content p,
+            section.card .text-content a {
+                font-size: 0.8em;
+            }
+    
+            section.card .visual {
+                width: 150px;
+                height: 150px;
+                right: 16px;
+                left: auto;
+                border-radius: 50%;
+            }
+    
+            section.card .visual img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    
+
+    <div class="navbar">
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- Botón hamburguesa -->
+        <ul class="navbar-nav">
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Descripción de Imagen 1">
+            </div>
+            
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li class="nav-item"><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li class="nav-item"><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li class="nav-item"><a href="Historia.html" class="nav-link">Educacion Politica</a></li>
+        </ul>
+      </div>
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Descripción de Imagen 1">
+            </div>
+            <li ><a href="index.html" class="nav-link">Inicio</a></li>
+            <li ><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li ><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li ><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li ><a href="Historia.html" class="nav-link">Educacion Politica</a></li>
+          
+        </ul>
+    </div>
+ 
+    <div class="container">
+        <div class="content">
+            <section id="cargos-politicos" class="articulo-1">
+                <h2>Cargos en la política del Perú</h2>
+                <div>
+                    <p><strong>1. Presidente de la República</strong>: El Presidente es el jefe de Estado y gobierno en
+                        el Perú. Su rol principal es dirigir la política del país, garantizar el cumplimiento de la
+                        Constitución, y representar al país en el ámbito internacional. También es el comandante en jefe
+                        de las Fuerzas Armadas y tiene la facultad de promulgar leyes, así como de vetar proyectos de
+                        ley del Congreso. Puede proponer iniciativas legislativas y decretar estados de emergencia.</p>
+
+                    <p><strong>2. Primer Ministro (Presidente del Consejo de Ministros)</strong>: El Primer Ministro es
+                        el coordinador del Consejo de Ministros y el principal asesor del Presidente en la gestión del
+                        gobierno. Su tarea principal es supervisar y dirigir el trabajo de los ministros, además de
+                        servir como enlace entre el Poder Ejecutivo y el Congreso. También presenta al Congreso las
+                        políticas generales del gobierno para su debate y aprobación.</p>
+
+                    <p><strong>3. Congresista</strong>: Los congresistas son representantes del pueblo encargados de
+                        elaborar y aprobar leyes. También tienen la función de fiscalizar al Poder Ejecutivo y otros
+                        órganos del Estado. El Congreso puede censurar o destituir ministros, y en casos extremos, al
+                        Presidente de la República.</p>
+
+                    <p><strong>4. Ministro de Estado</strong>: Cada Ministro es responsable de un área específica del
+                        gobierno, como Economía, Salud, Educación, entre otros. Los ministros proponen políticas
+                        sectoriales, gestionan los recursos del Estado para ejecutar las políticas públicas, y son
+                        responsables políticamente ante el Congreso por sus acciones y decisiones.</p>
+
+                    <p><strong>5. Gobernador Regional</strong>: Es el máximo representante del gobierno en cada una de
+                        las regiones del Perú. El Gobernador Regional administra los recursos regionales, coordina las
+                        políticas públicas en la región, y promueve el desarrollo económico, social y cultural. También
+                        tiene facultades para ejecutar proyectos de infraestructura y obras públicas.</p>
+
+                    <p><strong>6. Alcalde</strong>: El Alcalde es la máxima autoridad en el gobierno local
+                        (municipalidades). Su función es administrar la ciudad o el distrito, gestionar servicios
+                        públicos locales, ejecutar obras y promover el desarrollo local. El alcalde es responsable de la
+                        seguridad ciudadana en su jurisdicción y de coordinar con el gobierno central y regional en
+                        políticas públicas.</p>
+
+                    <p><strong>7. Jueces y Fiscales</strong>: Los jueces, en el Poder Judicial, tienen la función de
+                        impartir justicia de acuerdo a las leyes y la Constitución. Son responsables de resolver
+                        conflictos en diversas áreas, como civil, penal, y constitucional. Los fiscales, en el
+                        Ministerio Público, se encargan de la persecución de delitos, la investigación criminal, y la
+                        representación del Estado en procesos judiciales.</p>
+
+                    <p><strong>8. Defensor del Pueblo</strong>: El Defensor del Pueblo es una autoridad encargada de
+                        defender los derechos constitucionales de las personas y supervisar la correcta actuación de la
+                        administración pública. No tiene poder para dictar sanciones, pero puede emitir recomendaciones,
+                        denuncias y presentar informes al Congreso.</p>
+
+                    <p><strong>9. Contralor General de la República</strong>: El Contralor es responsable de supervisar
+                        el manejo de los fondos públicos y garantizar que los recursos del Estado sean utilizados de
+                        manera eficiente y transparente. Tiene la facultad de auditar las instituciones públicas y
+                        emitir informes sobre posibles irregularidades.</p>
+
+                    <p><strong>10. Presidente del Congreso</strong>: El Presidente del Congreso es el encargado de
+                        dirigir las sesiones plenarias y coordinar los trabajos legislativos. Representa al Congreso en
+                        sus relaciones con el Ejecutivo y otras instituciones, y tiene la potestad de decidir el orden
+                        de los debates y la agenda parlamentaria.</p>
+
+                    <p><strong>11. Magistrados del Tribunal Constitucional</strong>: El Tribunal Constitucional es la
+                        máxima instancia de interpretación de la Constitución en el Perú. Los magistrados son
+                        responsables de velar por el cumplimiento de la Constitución y resolver conflictos entre los
+                        poderes del Estado o entre ciudadanos y el Estado en temas constitucionales.</p>
+                </div>
+            </section>
+
+            <div class="button-container">
+                <button class="btn-navegacion">
+                    <a class="btnlink" href="Lista-presidente.html">Listado de Presidentes</a>
+                </button>
+                <button class="btn-navegacion">
+                    <a class="btnlink" href="futuros-presi.html">Próximos Candidatos</a>
+                </button>
+                <button class="btn-navegacion">
+                    <a class="btnlink" href="Acontecimientos.html">Acontecimientos Recientes</a>
+                </button>
+            </div>            
+
+        </div>
+    </div>
+
+ <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 InfoVota. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#contacto">Contacto</a>
+                <a href="#politicas">Políticas de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu-movil.js"></script>
+
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("mobile-menu");
+          if (menu.style.display === "block") {
+            menu.style.display = "none";
+          } else {
+            menu.style.display = "block";
+          }
+        }
+    </script>
+</body>
+</html>

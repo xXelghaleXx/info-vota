@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./imagenes/Logo.webp" type="image/x-icon">
+    <title>InfoVota</title>
+</head>
+<head>
+    
+    <style>
+       
+
+        .comparison-section {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .comparison-section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0c0c0c;
+        }
+
+        .party-selection {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            border-color: #1c1c1d;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #0f0f0f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .comparison-table {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #0c0b0b;
+        }
+
+        th {
+            background-color: #060707;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #b8b6bd;
+            transition: background-color 0.3s;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 10px;
+            background: #eaeaea;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+
+
+<body>
+    <div class="navbar">
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button> <!-- Botón hamburguesa -->
+        <ul class="navbar-nav">
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Descripción de Imagen 1">
+            </div>
+            
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li class="nav-item"><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li class="nav-item"><a href="#comparacion" class="nav-link">Comparación de Candidatos</a></li>
+            <li class="nav-item"><a href="Historia.html" class="nav-link">Educacion Politica</a></li>
+        </ul>
+      </div>
+
+
+      <br>
+
+    
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Descripción de Imagen 1">
+            </div>
+            <li ><a href="index.html" class="nav-link">Inicio</a></li>
+            <li ><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li ><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li ><a href="#comparacion" class="nav-link">Comparación de Candidatos</a></li>
+            <li ><a href="Historia.html" class="nav-link">Educacion Politica</a></li>
+          
+        </ul>
+    </div>
+
+    <div class="comparison-section container mt-5">
+        <h2 class="text-center mb-4">Comparación de Candidatos</h2>
+        
+        <div class="party-selection text-center mb-3">
+            <select id="partido1-select" class="form-select d-inline-block" style="width: 45%;"></select>
+            <select id="partido2-select" class="form-select d-inline-block" style="width: 45%;"></select>
+        
+            <button onclick="compararPartidos()" class="btn btn-primary ms-2">Comparar</button>
+        </div>
+        
+        <div class="selected-parties text-center mb-3">
+            <!-- Aquí se mostrarán los partidos seleccionados -->
+        </div>
+        
+        <div class="comparison-card card shadow-sm">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Partido 1</th>
+                            <th>Partido 2</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparison-body">
+                        <!-- Aquí se llenarán las filas con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 InfoVota. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#contacto">Contacto</a>
+                <a href="#politicas">Políticas de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("mobile-menu");
+          if (menu.style.display === "block") {
+            menu.style.display = "none";
+          } else {
+            menu.style.display = "block";
+          }
+        }
+    </script>
+
+    <script>
+        // Código para llenar los selectores
+document.addEventListener("DOMContentLoaded", function() {
+    const partido1Select = document.getElementById('partido1-select');
+    const partido2Select = document.getElementById('partido2-select');
+
+    // Función para llenar el selector
+    function llenarSelects() {
+        partidosPoliticos.forEach((partido, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = partido.nombre;
+            partido1Select.appendChild(option.cloneNode(true)); // Para el primer select
+            partido2Select.appendChild(option.cloneNode(true)); // Para el segundo select
+        });
+    }
+
+    llenarSelects(); // Llama a la función para llenar los selects
+});
+
+    </script>
+
+
+</body>
+<script src="script.js"></script>
+<script src="menu-movil.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

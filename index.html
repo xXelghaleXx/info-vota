@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>InfoVota</title>
+    <link rel="icon" href="./imagenes/Logo.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+        <ul class="navbar-nav">
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Logo InfoVota">
+            </div>
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li class="nav-item"><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li class="nav-item"><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li class="nav-item"><a href="Historia.html" class="nav-link">Educación Política</a></li>
+        </ul>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <div class="navbar-logo">
+                <img src="./imagenes/Logo.webp" alt="Logo InfoVota">
+            </div>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="Noticias.html" class="nav-link">Noticias</a></li>
+            <li><a href="Partidos.html" class="nav-link">Partidos Políticos</a></li>
+            <li><a href="Comparacion.html" class="nav-link">Comparación de Candidatos</a></li>
+            <li><a href="Historia.html" class="nav-link">Educación Política</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <a href="Noticias.html">
+                        <img src="./imagenes/Noticias.webp" alt="Noticias">
+                    </a>
+                    <div class="carousel-caption">
+                        <h3>Noticias</h3>
+                        <p class="footer-text">Últimas noticias en el mundo de la politica del Perú.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="Partidos.html">
+                        <img src="./imagenes/partidos.jpg" alt="Partidos Políticos">
+                    </a>
+                    <div class="carousel-caption">
+                        <h3>Partidos Políticos</h3>
+                        <p class="footer-text">Conoce los partidos políticos de Perú.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="Comparacion.html">
+                        <img src="./imagenes/candidatos.webp" alt="Comparación de Candidatos">
+                    </a>
+                    <div class="carousel-caption">
+                        <h3>Comparación de Candidatos</h3>
+                        <p class="footer-text">Compara las propuestas de los candidatos.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator" onclick="goToSlide(0)"></span>
+                <span class="indicator" onclick="goToSlide(1)"></span>
+                <span class="indicator" onclick="goToSlide(2)"></span>
+            </div>
+        </section>
+
+        <section id="sobre" class="info-container">
+            <div class="info-section">
+                <h2>¿Quiénes somos?</h2>
+                <p class="texto-extra">En InfoVota, nos dedicamos a proporcionar información objetiva y accesible sobre los partidos políticos y candidatos en Perú.</p>
+            </div>
+            <div class="info-section">
+                <h2>¿Cómo funciona la página?</h2>
+                <p class="texto-extra">InfoVota es una plataforma en línea que permite a los usuarios acceder a noticias, comparaciones de candidatos y una visión general de la historia política en Perú.</p>
+            </div>
+        </section>
+
+        <section id="galeria" class="grid">
+            <div class="grid-item">
+                <h3>Partidos Políticos</h3>
+                <img src="https://studentsforliberty.org/wp-content/uploads/2020/02/NFS-Blog-Image-12-1.jpg" alt="Partidos Políticos">
+                <p class="info-text">Los partidos políticos en Perú, como el Partido Nacionalista, el APRA y Fuerza Popular, buscan promover sus propuestas y representar a los ciudadanos en elecciones.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Futuros Candidatos</h3>
+                <img src="https://concepto.de/wp-content/uploads/2023/01/movimientos-sociales.jpg" alt="Movimientos Sociales">
+                <p class="info-text">Los movimientos sociales en Perú abogan por derechos civiles y reformas sociales, influyendo en la política y las elecciones.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Elecciones Generales</h3>
+                <img src="https://www.udep.edu.pe/hoy/wp-content/uploads/sites/49/2020/09/Elecciones-Generales.jpg" alt="Elecciones Generales">
+                <p class="info-text">Las elecciones generales en Perú se celebran cada cinco años, donde se eligen presidentes, congresistas y representantes regionales.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2024 InfoVota. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#contacto">Contacto</a>
+                <a href="#politicas">Políticas de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+     <script src="carrusel.js"></script>
+     <script src="menu-movil.js"></script>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
+
